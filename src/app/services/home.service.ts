@@ -26,4 +26,18 @@ export class HomeService {
     const url: string = `https://api.themoviedb.org/3/movie/${id}?api_key=${environment.tmdbkey}`
     return this.httpclient.get<MovieDetail>(url)
   }
+
+  public getUpcomming(pageno: number): Observable<Movies> {
+
+    const url: string = `https://api.themoviedb.org/3/movie/upcoming?api_key=${environment.tmdbkey}&page=${pageno}`
+    return this.httpclient.get<Movies>(url)
+  }
+
+
+  public TopRated(pageno: number): Observable<Movies> {
+
+    const url: string = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.tmdbkey}&page=${pageno}`
+    return this.httpclient.get<Movies>(url)
+  }
+
 }

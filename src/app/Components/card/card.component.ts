@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
   @Input() data: ResultsEntity = {} as ResultsEntity
 
   private moviedetail: MovieDetail = {} as MovieDetail
-  public genres: string  | undefined  = ''
+  public genres: string | undefined = ''
   constructor(
     private homeservice: HomeService
   ) { }
@@ -23,9 +23,11 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.homeservice.movieDetails(this.data.id).subscribe((data: MovieDetail) => {
       this.moviedetail = data
-      this.genres = data.genres?.map(ele=>ele.name).join(',')
+      this.genres = data.genres?.map(ele => ele.name).join(',')
     })
+  }
+  protected showDetails(data: number): void {
+    console.log(data);
 
   }
-
 }

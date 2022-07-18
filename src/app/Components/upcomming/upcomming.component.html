@@ -1,1 +1,10 @@
-<p>upcomming works!</p>
+<section *ngIf="!isloading" class="relative container grid-layout  p-4 ">
+
+
+    <!-- child element loop element and passvalue -->
+    <app-card *ngFor="let movie of AllMovies()" [data]="movie"> </app-card>
+
+</section>
+<section *ngIf="isloading">
+    <div class="lds-hourglass"></div>
+</section>
