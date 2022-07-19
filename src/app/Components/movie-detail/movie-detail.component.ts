@@ -24,23 +24,27 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.movieid = params['movieid']
+
+      this.homeservice.movieDetails(this.movieid).subscribe((data) => {
+        console.log(data);
+
+        data.poster_path = this.imagepath + data.poster_path
+        this.moviedetail = data
+        this.genres = data.genres?.map(ele => ele.name).join(', ')
+      })
+
+
+      this.homeservice.SimilarityMovie('movie', this.movieid).subscribe((data) => {
+        // console.log(data);
+        data.results?.forEach(ele => {
+          ele.poster_path = this.imagepath + ele.poster_path
+
+        })
+
+        this.similarmovies = data.results
+      })
     })
     console.log(this.movieid);
 
-    this.homeservice.movieDetails(this.movieid).subscribe((data) => {
-      data.poster_path = this.imagepath + data.poster_path
-      this.moviedetail = data
-      this.genres = data.genres?.map(ele => ele.name).join(', ')
-    })
-
-    this.homeservice.SimilarityMovie('movie', this.movieid).subscribe((data) => {
-      console.log(data);
-      data.results?.forEach(ele => {
-        ele.poster_path = this.imagepath + ele.poster_path
-
-      })
-
-      this.similarmovies = data.results
-    })
   }
 }
