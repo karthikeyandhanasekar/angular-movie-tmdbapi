@@ -10,6 +10,8 @@ import { CardComponent } from './Components/card/card.component';
 import { UpcommingComponent } from './Components/upcomming/upcomming.component';
 import { TopRatedComponent } from './Components/top-rated/top-rated.component';
 import { MovieDetailComponent } from './Components/movie-detail/movie-detail.component'
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './Components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,14 @@ import { MovieDetailComponent } from './Components/movie-detail/movie-detail.com
     CardComponent,
     UpcommingComponent,
     TopRatedComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

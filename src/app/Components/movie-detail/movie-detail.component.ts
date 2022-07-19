@@ -26,8 +26,6 @@ export class MovieDetailComponent implements OnInit {
       this.movieid = params['movieid']
 
       this.homeservice.movieDetails(this.movieid).subscribe((data) => {
-        console.log(data);
-
         data.poster_path = this.imagepath + data.poster_path
         this.moviedetail = data
         this.genres = data.genres?.map(ele => ele.name).join(', ')

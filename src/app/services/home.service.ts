@@ -44,4 +44,10 @@ export class HomeService {
     return this.httpclient.get<Movies>(url)
   }
 
+  public SearchDetails (value:String) :Observable<Movies>
+  {
+    const url: string = `https://api.themoviedb.org/3/search/multi?api_key=${environment.tmdbkey}&query=${value}`
+    return this.httpclient.get<Movies>(url)
+  }
+
 }

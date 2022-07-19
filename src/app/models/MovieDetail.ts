@@ -21,6 +21,8 @@ export interface MovieDetail {
     status: string;
     tagline: string;
     title: string;
+    name: string;
+    media_type:string;
     video: boolean;
     vote_average: number;
     vote_count: number;

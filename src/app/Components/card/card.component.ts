@@ -21,8 +21,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
   protected showDetails(data: number): void {
-    console.log(data);
-    
+
     this.router.navigate([`/MovieDetail/`],
       {
         queryParams: { movieid: data }
