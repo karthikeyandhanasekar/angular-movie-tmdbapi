@@ -1,8 +1,8 @@
-<div class="relative">
+<div class="relative border-4 border-white-500">
 
     <div class="">
-        <input type="text" [(ngModel)]="moviename" class="p-2 bg-transparent text-white border-4 border-white-500"
-            placeholder="Inception" (ngModelChange)="onchange()">
+        <input type="text" [(ngModel)]="moviename" class="p-2 bg-transparent text-white w-full " placeholder="Inception"
+            (ngModelChange)="onchange()">
     </div>
     <div class="absolute bg-white text-black z-10 w-full top-30 cursor-pointer" *ngIf="displayoption">
         <div *ngFor="let movie of searchresult" class="p-2  flex space-x-2 border-b-2 border-black"

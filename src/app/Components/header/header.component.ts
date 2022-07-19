@@ -7,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-
+  public displaynav: boolean = false
   constructor(
   ) { }
 
   ngOnInit(): void {
-
-    // console.log(this.moviename);
-
   }
-
+  displaynavbar() {
+    this.displaynav = !this.displaynav
+  }
 
 }

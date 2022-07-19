@@ -45,6 +45,9 @@ export class SearchComponent implements OnInit {
   moviedetail(id: number) {
 
     this.moviename = ''
+    this.displayoption = false
+
+
     this.router.navigate([`/MovieDetail/`],
       {
         queryParams: { movieid: id }
