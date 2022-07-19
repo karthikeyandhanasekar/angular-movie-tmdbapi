@@ -35,8 +35,12 @@ export class HomeService {
 
 
   public TopRated(pageno: number): Observable<Movies> {
-
     const url: string = `https://api.themoviedb.org/3/movie/popular?api_key=${environment.tmdbkey}&page=${pageno}`
+    return this.httpclient.get<Movies>(url)
+  }
+
+  public SimilarityMovie(type: String, id: number): Observable<Movies> {
+    const url: string = `https://api.themoviedb.org/3/${type}/${id}/similar?api_key=${environment.tmdbkey}`
     return this.httpclient.get<Movies>(url)
   }
 

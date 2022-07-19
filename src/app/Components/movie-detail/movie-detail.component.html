@@ -1,0 +1,42 @@
+<section class="p-4">
+    <div class="flex md:flex-row  md:space-x-20  leading-10 flex-col md:space-y-10 space-y-20 md:justify-center ">
+        <div class="w-96">
+            <img src={{moviedetail.poster_path}} alt={{moviedetail.title}} loading="lazy">
+        </div>
+
+        <div class="">
+            <h1 class="text-center text-3xl hover:text-fuchsia-800  ">
+                <a href={{moviedetail.homepage}} target="_blank">{{moviedetail.title}}</a>
+            </h1>
+            <p class="text-center text-zinc-500">{{moviedetail.tagline}}</p>
+            <br />
+            <p class="text-justify text-lg leading-10">{{moviedetail.overview}}</p>
+            <br />
+        </div>
+    </div>
+    <br/>
+    <div class="flex md:flex-row justify-center space-y-2 md:space-x-20 flex-col">
+        <div class="text-xl text-zinc-500 hover:text-fuchsia-800 ">
+            <h1>Original Languages : {{moviedetail.original_language | uppercase}}</h1>
+        </div>
+        <div class="text-xl text-zinc-500 hover:text-fuchsia-800 ">
+            <h1>Released Date : {{moviedetail.release_date | date}}</h1>
+        </div>
+        <div class="text-xl text-zinc-500 hover:text-fuchsia-800 ">
+            <h1>Runtime : {{moviedetail.runtime | number }}</h1>
+        </div>
+
+        <div class="text-xl text-zinc-500 hover:text-fuchsia-800 ">
+            <h1>Genres : {{genres}}</h1>
+        </div>
+    </div>
+
+    <div  class="relative container grid-layout  p-4 ">
+        <!-- child element loop element and passvalue -->
+        <app-card *ngFor="let movie of similarmovies" [data]="movie"> </app-card>
+    
+    </div>
+
+
+
+</section>

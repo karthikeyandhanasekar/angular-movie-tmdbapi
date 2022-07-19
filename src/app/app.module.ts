@@ -8,7 +8,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './Components/card/card.component';
 import { UpcommingComponent } from './Components/upcomming/upcomming.component';
-import { TopRatedComponent } from './Components/top-rated/top-rated.component'
+import { TopRatedComponent } from './Components/top-rated/top-rated.component';
+import { MovieDetailComponent } from './Components/movie-detail/movie-detail.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { TopRatedComponent } from './Components/top-rated/top-rated.component'
     HomeComponent,
     CardComponent,
     UpcommingComponent,
-    TopRatedComponent
+    TopRatedComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
